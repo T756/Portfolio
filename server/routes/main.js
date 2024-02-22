@@ -35,7 +35,10 @@ router.get('', async (req, res) => {
         const repoImages = {
             'blogging': 'img/image-url1.png',
             'WeatherApp': 'img/img-url2.png',
-            'website': 'img/img-url3.png'
+            'website': 'img/img-url3.png',
+            'EmailSender': 'img/img-url4.png',
+            'TODO': 'img/img-url5.png',
+            'Portfolio': 'img/img-url6.png'
         };
 
         // Adding image URLs to each repository object
