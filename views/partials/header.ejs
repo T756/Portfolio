@@ -1,0 +1,30 @@
+<header class="header">
+    <a href="/" class="header__logo">Portfolio</a>
+
+    <nav class="header__nav">
+        <ul>
+            <li>
+                <a href="/" class="<%= isActiveRoute('/', currentRoute) %>">Home</a>
+            </li>
+            <li>
+                <a href="/#bio">About</a>
+            </li>
+            <li>
+                <a href="/about" class="<%= isActiveRoute('/about', currentRoute) %>">Contact</a>
+            </li>
+            <li>
+                <a href="/admin" class="<%= isActiveRoute('/admin', currentRoute) %>">Login</a>
+            </li>
+            <li>
+                <a href="/register" class="<%= isActiveRoute('/register', currentRoute) %>">Register</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="header__button">
+        <button class="searchBtn" aria-expanded="false">
+            Search
+        </button>
+    </div>
+
+</header>

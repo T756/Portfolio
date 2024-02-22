@@ -1,0 +1,37 @@
+<a href="/dashboard">&larr; Back</a>
+<div class="admin-title">
+    <h2>Add New Post</h2>
+</div>
+
+<div class="container">
+    <div class="generator">
+        <div class="generator-head">
+            <form id="generator-form">
+                <div class="gen-value">
+                    <input name="gen_count" type="number" class="form-control" min="1" max="100" value="5">
+                </div>
+
+                <div>
+                    <select name="gen_options" class="form-control">
+                        <option value="paras">paragraphs</option>
+                        <option value="sentences">sentences</option>
+                        <option value="words">words</option>
+                    </select>
+                </div>
+                <button type="button" id="gen-btn" class="btn">Generate!</button>
+            </form>
+        </div>
+
+        <div class="generator-body">
+            <form id="addPostForm" action="/add-post" method="POST">
+                <label for="title"><b>Title</b></label>
+                <input type="text" placeholder="Post Title" name="title">
+
+                <label for="body"><b>Content</b></label>
+                <textarea name="body" cols="50" rows="10" id="gen-content"></textarea>
+
+                <input type="submit" value="Add" class="btn">
+            </form>
+        </div>
+    </div>
+</div>
