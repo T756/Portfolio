@@ -119,7 +119,7 @@ function displayGenContent(data){
             return;
         }
     } else {
-        texts = data.join("<br><br>");
+        texts = data.join("\n\n");
         genContent.innerHTML = texts;
     }
 }
