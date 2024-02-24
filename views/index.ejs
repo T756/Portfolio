@@ -1,7 +1,10 @@
 <div class="author">
-    <h1 class="author__heading">Welcome, I'm Azamat</h1>
-    <p class="author__body">Web developer and student(actively searching for a job)</p>
+<!--    <h1 class="author__heading">Welcome, I'm Azamat</h1>-->
+<!--    <p class="author__body">Web developer and student(actively searching for a job)</p>-->
+    <h2><%= quote %></h2>
+    <p> - <%= author %></p>
 </div>
+
 
 <img src="/img/hero-image.png" alt="lonely wolf(literally me)" class="hero-image" width="981" height="528">
 
@@ -17,6 +20,30 @@
                     <div class="repo-details">
                         <h3><%= repo.name %></h3>
                         <p><%= repo.description %></p>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</section>
+
+<section id="bio">
+    <h2>Posts</h2>
+    <div class="post-grid">
+        <% data.forEach(post => { %>
+            <div class="post-item">
+                <a href="/post/<%= post._id %>">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <img src="<%= post.image_url_1 %>" alt="<%= post.title %>" class="carousel-img">
+                            <img src="<%= post.image_url_2 %>" alt="<%= post.title %>" class="carousel-img">
+                            <img src="<%= post.image_url_3 %>" alt="<%= post.title %>" class="carousel-img">
+                        </div>
+                    </div>
+                    <div class="post-details">
+                        <h4><%= post.title %></h4>
+                        <p><%= post.description %></p>
+                        <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
                     </div>
                 </a>
             </div>

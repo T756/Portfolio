@@ -1,3 +1,15 @@
+//Carousel
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const images = carousel.querySelector('.carousel-images');
+    let imageIndex = 0;
+
+    setInterval(() => {
+        imageIndex = (imageIndex + 1) % images.children.length;
+        images.style.transform = `translateX(-${imageIndex * 100}%)`;
+    }, 3000); // Change slide every 3 seconds
+});
+
+
 //Search posts
 document.addEventListener('DOMContentLoaded', function(){
     const allButtons = document.querySelectorAll('.searchBtn');

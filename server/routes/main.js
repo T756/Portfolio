@@ -5,7 +5,6 @@ const router = express.Router()
 const post = require('../models/post')
 const axios = require('axios')
 
-
 //Routes
 router.get('', async (req, res) => {
     try {
@@ -26,10 +25,11 @@ router.get('', async (req, res) => {
         const nextPage = parseInt(page) + 1;
         const hasNextPage = nextPage <= Math.ceil(count / perPage);
 
-        const profileResponse = await axios.get(`https://api.github.com/users/T756`);
-        const profile = profileResponse.data;
-
-        const reposResponse = await axios.get(`https://api.github.com/users/T756/repos`);
+        const reposResponse = await axios.get(`https://api.github.com/users/T756/repos`, {
+            headers: {
+                Authorization: `token ${process.env.GITHUB_TOKEN}`
+            }
+        });
         const repos = reposResponse.data;
 
         const repoImages = {
@@ -46,14 +46,23 @@ router.get('', async (req, res) => {
             repo.image = repoImages[repo.name];
         });
 
+        const quoteResponse = await axios.get('https://api.api-ninjas.com/v1/quotes?category=happiness', {
+            headers: {
+                'X-Api-Key': 'TNClr/OOqRX80soOxntp6g==Lp0Jeyl4YtXteoM0' // Replace 'Your-API-Key-Here' with your actual API key
+            }
+        });
+        const quote = quoteResponse.data[0].quote;
+        const author = quoteResponse.data[0].author;
+
         res.render('index', {
             locals,
             data,
             current: page,
             nextPage: hasNextPage ? nextPage : null,
             currentRoute: '/',
-            profile,
-            repos
+            repos,
+            quote,
+            author
         });
 
     } catch (error) {

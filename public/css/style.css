@@ -173,8 +173,14 @@ img {
 
 /* Author - HomePage */
 .author {
+    margin-top: 100px;
+    margin-bottom: 100px;
     padding: 10px 0;
     text-align: center;
+}
+
+.author p{
+    text-align: end;
 }
 
 .author__heading {
@@ -440,3 +446,51 @@ img {
 }
 
 
+/* Carousel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.post-details {
+    padding: 10px;
+}
+
+.post-details h4 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.post-details p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.article-list__date {
+    font-size: 14px;
+    color: #888;
+}
